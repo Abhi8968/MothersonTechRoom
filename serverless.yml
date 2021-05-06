@@ -7,12 +7,28 @@ provider:
   region: ap-south-1
 
 functions:
-  - hello:
-      handler: src/handler.hello
+  - CheckAndGetEvents:
+      handler: src/check-and-get-event.handler
       timeout: 120
       memorySize: 128
       events:
         - http:
-            path: /hello 
+            path: /handler
+            method: get
+  - Checkout:
+      handler: src/checkout.handler
+      timeout: 120
+      memorySize: 128
+      events:
+        - http:
+            path: /handler 
+            method: get
+  - GenSecretCode:
+      handler: src/gen-secret-code.handler
+      timeout: 120
+      memorySize: 128
+      events:
+        - http:
+            path: /handler 
             method: get
 
