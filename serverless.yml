@@ -5,7 +5,7 @@ provider:
   runtime: nodejs12.x
   env:
     stage: 
-      Fn::Sub: ${{ secrets.ENVIRONMENT }}
+      Fn::Sub: ${{ environments.Dev }}
   region: ap-south-1
 
 functions:
