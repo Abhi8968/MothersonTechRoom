@@ -3,18 +3,18 @@ service: serverless
 provider:
   name: aws
   runtime: nodejs12.x
-  stage: dev
+  stage: ${{ secrets.ENVIRONMENT }}
   region: ap-south-1
 
-# functions:
-#   - CheckAndGetEvents:
-#       handler: src/check-and-get-event.handler
-#       timeout: 120
-#       memorySize: 128
-#       # events:
-#       #   - http:
-#       #       path: /handler
-#       #       method: get
+functions:
+  - CheckAndGetEvents:
+      handler: src/check-and-get-event.handler
+      timeout: 120
+      memorySize: 128
+      # events:
+      #   - http:
+      #       path: /handler
+      #       method: get
 #   - Checkout:
 #       handler: src/checkout.handler
 #       timeout: 120
