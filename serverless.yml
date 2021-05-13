@@ -5,7 +5,7 @@ provider:
   runtime: nodejs12.x
   env:
     stage: 
-      Fn::Sub: ${{ environments.Dev }}
+      Fn::Sub: ${file(../config/config.yml):stage}
   region: ap-south-1
 
 functions:
@@ -25,7 +25,7 @@ functions:
         - http:
             path: /test 
             method: get
-#   - GenSecretCode:
+# #   - GenSecretCode:
 #       handler: src/gen-secret-code.handler
 #       timeout: 120
 #       memorySize: 128
