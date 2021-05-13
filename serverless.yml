@@ -23,7 +23,7 @@ functions:
       memorySize: 128
       events:
         - http:
-            path: /handler 
+            path: /test 
             method: get
 #   - GenSecretCode:
 #       handler: src/gen-secret-code.handler
