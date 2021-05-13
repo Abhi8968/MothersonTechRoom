@@ -3,7 +3,7 @@ service: serverless
 provider:
   name: aws
   runtime: nodejs12.x
-  stage: ${{ secrets.ENVIRONMENT }}
+  stage: !Sub ${{ secrets.ENVIRONMENT }}
   region: ap-south-1
 
 functions:
